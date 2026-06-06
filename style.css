@@ -1,0 +1,75 @@
+/* 全体のコンテナ */
+.omikuji-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-family: sans-serif;
+  border: 1px solid #eef2f5;
+}
+
+.omikuji-container h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+/* おみくじの箱（絵文字）のスタイル */
+.omikuji-box {
+  font-size: 4rem;
+  margin: 20px 0;
+  transition: transform 0.1s;
+}
+
+/* シャカシャカ揺れるアニメーション（JSでこのクラスを付け外しします） */
+.shake {
+  animation: shakeAnimation 0.5s ease-in-out;
+}
+
+@keyframes shakeAnimation {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-5px, 0) rotate(-10deg); }
+  40% { transform: translate(5px, 0) rotate(10deg); }
+  60% { transform: translate(-5px, 0) rotate(-10deg); }
+  80% { transform: translate(5px, 0) rotate(10deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* 結果テキスト */
+#omikuji-result {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #555;
+  min-height: 2.5rem; /* 結果が変わってもガタつかないように高さを固定 */
+  margin: 20px 0;
+}
+
+/* ボタンのスタイル */
+#omikuji-btn {
+  background: #4f46e5; /* おしゃれなパープルブルー */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+}
+
+#omikuji-btn:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+}
+
+/* 1回引いた後にボタンを無効化（グレーアウト）するスタイル */
+#omikuji-btn:disabled {
+  background: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
